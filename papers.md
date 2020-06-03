@@ -139,8 +139,19 @@ P1-5，P1-7
 	- できました
 
 ### P1-14,Script-aware embedding を用いた文字表現の獲得,"○長澤駿太, 北田俊輔, 彌冨仁 (法政大)"
-- 概要:
-- キーワード:
+- 概要
+	- 従来手法で漢字（表意文字）をcnnで埋め込む手法はあったが、今回はカタカナとひらがな（表音文字）に対して行った
+	- 文字形状を学習したvisualfeature(CAE)と文脈情報を学習したcontext feature(CBOW)の２つの文字表現手法を用いる
+	- visual featureとcontext featureをmodality atten-tionによって組み合わせた
+	- 誤字脱字や表記ゆれなどが多く存在する楽天市場の商品[レビューデータセット](https://github.com/zhangxiangxiao/glyph)のネガポジ分類評価した
+- アジア圏の言語に対する文書分類タスクにおいて，文字単位を入力する手法が単語単位より高い精度であると[報告](https://arxiv.org/abs/1708.02657)されている
+- character-level convolutional neural network(CLCNN)
+	- 文字単位の入力を行う深層学習による文書解析手法
+	- 各文字に対するone-hot表現を一次元CNNに入力
+	- 英語と比べ文字種が圧倒的に多い日本語などでは入力次元数が大きくなるため，過学習となりやすい
+	- 文字画像に対してオーグメンテーションをするとよいと[報告](https://arxiv.org/abs/1810.03595)されている
+- 文字の種類が多い言語ではconvolutional auto encoder(CAE)で低次元表現に埋め込む
+- [Modality Attention](https://arxiv.org/abs/1802.07862)：文中の各単語表現，文字表現，画像情報の異なる表現をattention機構により取捨選択する
 
 ### P1-15,順序性を示す子どもの発達の絵本レビュー・マイニング,"○笠松美歩, 宇津呂武仁 (筑波大), 斎藤有 (聖徳大), 石川由美子 (宇都宮大)"
 - 概要:
