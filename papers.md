@@ -221,8 +221,18 @@ P1-18:要約とその関連研究について
 		-1,783,817文対の学習データ，1,790文対の開発データ，1,812文対のテストデータ
 
 ### P1-21,Hierarchical Transformerによるストーリー生成,"○渥美和大, 狩野芳伸 (静大)"
-- 概要:
-- キーワード:
+- 概要
+	- 先行研究ではHierarchical Recurrent EncoderDe-coder(HRED)で主にストーリー生成されていた
+	- Latent Dirichlet Allocation(LDA)ではトピックの情報を推定した
+	- 今回は一文目を入力してそれに続く文を生成することを目的とする
+	- Hierarchical Transformer(HT)を提案
+	- TransformerのEncoder、Decoderに加えて文脈情報を扱うContext Encoderを追加
+		- これまでのEncoderの出力を保持しておいて、それらを結合して入力する、これで複数文の情報を取り入れる
+		- その出力をSouce-Target Attentionのk,vに使う
+	- RNNみたいに、入力は1文目から今までに生成した文章の情報を使う
+	- Topic Attention(TA)を追加
+		- トピックを推定してデコーダに入れる
+	- Sentence LevelRelativePositionalEn-coding(SLRPE)でストーリーの何文目かをposition encodingに入れた
 
 ### P1-22,Poincar? GloVe ベクトルのレトロフィッティング,"○村瀬敦也, 三輪誠, 佐々木裕 (豊田工大)"
 - 概要:
