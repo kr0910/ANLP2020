@@ -301,12 +301,16 @@ P1-19:argmaxをgumbel-softmax trickに
 		- **Dice係数よりも差集合の要素数による影響を下げ，相対的に共通要素数を重視した類似度計算**
 
 
-
-- キーワード:
-
 ### P1-25,分類器による英文前置詞誤り訂正の学習法,○小田幹雄 (久留米高専)
-- 概要:
-- キーワード:
+- 概要
+	- 英語を勉強するときの支援を目的として、BERTを使った前置詞の誤り訂正の精度向上方法を提案
+		- Baseモデル
+			- British National Corpus (BNC)コーパスで転移学習
+			- 対象の前置詞はBNCコーパスに含まれる110種類
+			- 前置詞を[MASK]トークンにして学習
+		- 今回は、"in","of"の誤りが多いので、"in","of","others"の３クラス分類をしてからothersの分類をすることを提案
+	- 注目した前置詞'in'および'of'については適合率は若干改善した
+	- 全体の精度は若干低下した
 
 ### P1-26,Unsupervised Entity Alignment Model via Optimal Transport,"○Xin Zhao, Takuo Hamaguchi, Masashi Shimbo, Yuji Matsumoto (NAIST)"
 - 概要:
